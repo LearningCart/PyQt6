@@ -15,13 +15,16 @@ class MainWindow(QMainWindow):
         button = QPushButton("Press it!");
         button.setCheckable(True);
         button.clicked.connect(self.handleBtnPress);
-
+        button.clicked.connect(self.handleToggle);
         self.setCentralWidget(button);
 
     def handleBtnPress(self):
         self.count = self.count + 1;
         self.setWindowTitle("Test App: {}".format(self.count));
         print("Button pressed!!");
+
+    def handleToggle(self, status):
+        print("Button Toggled?", status);
 
 
 app = QApplication(sys.argv);
