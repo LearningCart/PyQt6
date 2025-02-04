@@ -42,3 +42,26 @@ Complete tutorial project on using PyQt6 to create embedded system test bench.,
 
 **Idea 7:**
 PyQt6 based GUI tool to read the pdf file selected by the user and create mind-map of key concepts :O
+
+**Idea 8:**
+Create note taking application.
+Base version: Basic note taking app., stores notes in sqlite database and allows for viewing it later on.,
+Advanced version:
+While studying we can store different types of notes, like screen recording,text, pictures
+
+**Idea 9:**
+Job application tracking application.., it keeps record of all the job applied by date with the description of the jobs.,
+
+**Idea 10:**
+Multi-schedule reminder like water, break, excercise, etc., which can be pushed to remote EPS32 based device., 
+It runs every seconds and checks which reminders are due., kind of like time frame of video editor., 
+walks the time frame and notify to remote device if reminder event occurs
+
+**Idea 11:**
+PyQt6 based GUI application that allow viewing multiple Raspberry Pi and ESP32 based streaming cameras., 
+Allows to go back in time, and see footages., 
+
+**Idea 12:**
+PyQt6 based GUI application that takes pictures via USB camera when gesture is detected.
+Gesture can be sensed and send via serial. We can use Wii Nunchuk or APDS 9960 or similar sensor., 
+either connected directly via MCP2221, or connected to Arduino ESP32 nano/Raspbery pi pico 2W sending data over UDP.
