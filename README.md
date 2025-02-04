@@ -30,3 +30,6 @@ BNO085 or similar 9-DoF sensor data visualized through the PyQt6 based UI..,
 
 Idea 6:
 Complete tutorial project on using PyQt6 to create embedded system test bench., 
+
+Idea 7:
+PyQt6 based GUI tool to read the pdf file selected by the user and create mind-map of key concepts :O
