@@ -12,6 +12,7 @@
 # with the name contextMenuEvent and it will receive all events of this type.
 
 import                      sys;
+from PyQt6.QtCore    import Qt;
 from PyQt6.QtGui     import QAction;
 from PyQt6.QtWidgets import QMenu;
 from PyQt6.QtWidgets import QMainWindow;
@@ -29,10 +30,34 @@ class MainWindow(QMainWindow):
         context.addAction(QAction("test 3", self))
         context.exec(e.globalPos())
 
+# signal-based approach to creating context menus.
+class NewWindow(MainWindow):
+    def __init__(self):
+        super().__init__()
+        self.show()
+
+        self.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.customContextMenuRequested.connect(self.on_context_menu)
+
+    def on_context_menu(self, pos):
+        context = QMenu(self)
+        context.addAction(QAction("test 1", self))
+        context.addAction(QAction("test 2", self))
+        context.addAction(QAction("test 3", self))
+
+        # This will give context menu at top left corner
+        # context.exec();
+
+        # Below will give context menu where it is clicked relative to QMainWindow
+        context.exec(self.mapToGlobal(pos));
+
 
 app = QApplication(sys.argv)
 
-window = MainWindow()
-window.show()
+# window = MainWindow()
+# window.show()
+
+window = NewWindow();
+window.show();
 
 app.exec()
