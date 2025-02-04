@@ -5,8 +5,8 @@ from PyQt6.QtWidgets import QPushButton;
 
 
 class MainWindow(QMainWindow):
-    count = 0;
     def __init__(self):
+        self.checked = False;
         self.count = 0;
         super().__init__();
         self.setWindowTitle("Test App");
@@ -24,7 +24,10 @@ class MainWindow(QMainWindow):
         print("Button pressed!!");
 
     def handleToggle(self, status):
+        # Store button checked status in a variable for use without accessing the widget
+        self.checked = status;
         print("Button Toggled?", status);
+        # print("slef.checked = {}".format(self.checked));
 
 
 app = QApplication(sys.argv);
