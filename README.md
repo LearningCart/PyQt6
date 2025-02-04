@@ -32,7 +32,7 @@ act as a bridge between remote LoRa relay board.
 
 **Idea 4:**
 Bluetooth controlled relay board and UI is in PyQt6.
-For accessing BLE, we need BLED v1.2 dongle or we can use BleuIO dongle using pygatt
+For accessing BLE, we need BlueGiga v1.2 dongle or we can use BleuIO dongle using pygatt
 
 **Idea 5:**
 BNO085 or similar 9-DoF sensor data visualized through the PyQt6 based UI..,
