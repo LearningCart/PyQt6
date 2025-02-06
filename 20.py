@@ -54,8 +54,6 @@ class MainWindow(QMainWindow):
     def slider_position(self, p):
         print("Position changed to {}".format(p));
 
-
-
 app = QApplication(sys.argv)
 window = MainWindow()
 window.show()
