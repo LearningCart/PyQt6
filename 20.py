@@ -1,6 +1,6 @@
 # File for all the programs releated to layout.,
 import sys
-from PyQt6.QtWidgets import QVBoxLayout;
+from PyQt6.QtWidgets import QHBoxLayout;
 from PyQt6.QtGui     import QColor, QPalette;
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QLineEdit);
 
@@ -28,7 +28,7 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("My App")
 
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
 
         # layout.addWidget(Color("black"))
         # layout.addWidget(Color("red"))
