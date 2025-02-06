@@ -45,13 +45,13 @@ class MainWindowPixMap(QMainWindow):
 
         self.setWindowTitle("My App")
         self.setFixedSize(720,480);
-
+        self.setStyleSheet("background-color: orange;") 
         widget = QLabel() # .setText can be used (may be xml :) and used as) label
         dimention = 30;
         widget.setGeometry(dimention,dimention,dimention,dimention);
         #  widget.setScaledContents(True) # Try turning it on or off 
 
-        widget.setPixmap(QPixmap('test.png'))
+        widget.setPixmap(QPixmap('test.png')) # Icon source: www.iconarchive.com
 
         widget.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
 
