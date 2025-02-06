@@ -49,6 +49,8 @@ class MainWindow(QMainWindow):
         menu = self.menuBar()
         file_menu = menu.addMenu("&File")
         file_menu.addAction(button_action)
+        file_menu.addSeparator()
+        file_menu.addAction(button_action2)
 
     def onMyToolBarButtonClick(self, s):
         print("click", s)
