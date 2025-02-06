@@ -1,8 +1,7 @@
 # File for all the programs releated to layout.,
 import sys
-from PyQt6.QtWidgets import (QHBoxLayout, QVBoxLayout);
-from PyQt6.QtGui     import (QColor, QPalette);
-from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QLineEdit, QDial);
+from PyQt6.QtWidgets import (QHBoxLayout, QVBoxLayout, QGridLayout);
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QLineEdit, QDial, QPushButton, QCheckBox);
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -26,6 +25,11 @@ class MainWindow(QMainWindow):
         
         # Add this layout to master layout:
         masterlayout.addLayout(layout);
+        
+        # You can set the spacing around the layout using .setContentMargins
+        # or set the spacing between elements using .setSpacing:
+        masterlayout.setContentsMargins(40,20,20,20)
+        masterlayout.setSpacing(30)
 
         # Now create layout of verticle dials and add them to master layout
         layout2 = QVBoxLayout()
@@ -54,8 +58,36 @@ class MainWindow(QMainWindow):
     def slider_position(self, p):
         print("Position changed to {}".format(p));
 
+
+class MainWindowGridLayout(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My App")
+
+        layout = QGridLayout()
+        
+        widget = QPushButton("Press it!");
+        layout.addWidget(widget, 0, 3);
+
+        widget = QDial();
+        widget.setRange(0, 100);
+        widget.setSingleStep(1);
+        layout.addWidget(widget, 1, 1);
+
+        widget = QCheckBox();
+        layout.addWidget(widget, 2, 0);
+
+        widget = QLineEdit();
+        widget.setMaxLength(20);
+        widget.setPlaceholderText("Enter Your Text Here");
+        layout.addWidget(widget, 3, 3)
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
 app = QApplication(sys.argv)
-window = MainWindow()
+window = MainWindowGridLayout()
 window.show()
 app.exec()
 
