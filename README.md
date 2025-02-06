@@ -65,3 +65,13 @@ Allows to go back in time, and see footages.,
 PyQt6 based GUI application that takes pictures via USB camera when gesture is detected.
 Gesture can be sensed and send via serial. We can use Wii Nunchuk or APDS 9960 or similar sensor., 
 either connected directly via MCP2221, or connected to Arduino ESP32 nano/Raspbery pi pico 2W sending data over UDP.
+
+**Idea 13:**
+PyQt6 based GUI application that controls the remote Raspberry Pi taking timelapse pictures.
+PyQt6 based GUI can start, stop, browse all pictures, trigger conversion ot video and stream/send/playback 
+it on this GUI.
+
+**Idea 14:**
+PyQt6 based GUI application that allows configuration of device parameters which can be sent via serial/UDP to
+the device to be stored as configuration data structure in NOR flash.
+
