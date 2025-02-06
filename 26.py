@@ -1,0 +1,45 @@
+# QMessageBox
+import sys
+
+from PyQt6.QtWidgets import QApplication, QMainWindow, QMessageBox, QPushButton
+
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__();
+
+        self.setWindowTitle("My App");
+        self.setFixedSize(720, 480);
+
+        button = QPushButton("Press me for a dialog!");
+        button.clicked.connect(self.button_clickedyn);
+        self.setCentralWidget(button);
+
+    def button_clicked(self, s):
+        dlg = QMessageBox(self);
+        dlg.setWindowTitle("I have a question!");
+        dlg.setText("This is a simple dialog");
+        button = dlg.exec();
+
+        if button == QMessageBox.StandardButton.Ok:
+            print("OK!");
+
+    def button_clickedyn(self, s):
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("I have a question!")
+        dlg.setText("This is a question dialog")
+        dlg.setStandardButtons(
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+        dlg.setIcon(QMessageBox.Icon.Question)
+        button = dlg.exec()
+
+        if button == QMessageBox.StandardButton.Yes:
+            print("Yes!")
+        else:
+            print("No!")
+
+app = QApplication(sys.argv)
+window = MainWindow()
+window.show()
+app.exec()
