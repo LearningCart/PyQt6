@@ -1,6 +1,6 @@
 # File for all the programs releated to layout.,
 import sys
-from PyQt6.QtWidgets import (QHBoxLayout, QVBoxLayout, QGridLayout);
+from PyQt6.QtWidgets import (QHBoxLayout, QVBoxLayout, QGridLayout, QStackedLayout);
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QLineEdit, QDial, QPushButton, QCheckBox);
 
 class MainWindow(QMainWindow):
@@ -86,8 +86,40 @@ class MainWindowGridLayout(QMainWindow):
         widget.setLayout(layout)
         self.setCentralWidget(widget)
 
+class MainWindowStackedLayout(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("My App")
+
+        layout = QStackedLayout()
+
+        btn = QPushButton("Press it!");
+
+        dial = QDial();
+        dial.setRange(0, 100);
+        dial.setSingleStep(1);
+
+        chkbx = QCheckBox();
+
+        line = QLineEdit();
+        line.setMaxLength(20);
+        line.setPlaceholderText("Enter Your Text Here");
+
+        layout.addWidget(btn);
+        layout.addWidget(dial);
+        layout.addWidget(chkbx);
+        layout.addWidget(line);
+
+        # Changing index will change the stacking order
+        # Different widget will be on the top.
+        layout.setCurrentIndex(1) 
+
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
 app = QApplication(sys.argv)
-window = MainWindowGridLayout()
+window = MainWindowStackedLayout()
 window.show()
 app.exec()
 
