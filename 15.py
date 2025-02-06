@@ -12,7 +12,7 @@ from PyQt6.QtWidgets import (QApplication, QListWidget, QMainWindow)
 class MainWindow (QMainWindow):
     def __init__(self):
         super().__init__();
-        self.setWindowTitle("QComboBox Example");
+        self.setWindowTitle("QListWidget Example");
 
         widget = QListWidget();
         widget.addItems(["First", "Second", "Third"]);
