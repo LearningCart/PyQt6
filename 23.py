@@ -26,10 +26,11 @@ class MainWindow(QMainWindow):
         self.addToolBar(toolbar);
     
         button_action = QAction("My button", self)
-        button_action.setStatusTip("This is my button")
+        button_action.setStatusTip("Rocket Launcher!")
         button_action.triggered.connect(self.onMyToolBarButtonClick)
         toolbar.addAction(button_action)
 
+        self.setStatusBar(QStatusBar(self))
 
     
     def onMyToolBarButtonClick(self, s):
