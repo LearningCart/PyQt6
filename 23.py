@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         toolbar = QToolBar("My main toolbar");
         self.addToolBar(toolbar);
     
-        button_action = QAction("My button", self)
+        button_action = QAction(QIcon("wi-fi.png"), "My button", self)
         button_action.setStatusTip("Rocket Launcher!")
         button_action.triggered.connect(self.onMyToolBarButtonClick)
         button_action.setCheckable(True)
