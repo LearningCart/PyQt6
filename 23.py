@@ -24,6 +24,12 @@ class MainWindow(QMainWindow):
 
         toolbar = QToolBar("My main toolbar");
         self.addToolBar(toolbar);
+    
+        button_action = QAction("My button", self)
+        button_action.setStatusTip("This is my button")
+        button_action.triggered.connect(self.onMyToolBarButtonClick)
+        toolbar.addAction(button_action)
+
 
     
     def onMyToolBarButtonClick(self, s):
