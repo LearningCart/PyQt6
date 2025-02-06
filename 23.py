@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         button_action = QAction("My button", self)
         button_action.setStatusTip("Rocket Launcher!")
         button_action.triggered.connect(self.onMyToolBarButtonClick)
+        button_action.setCheckable(True)
         toolbar.addAction(button_action)
 
         self.setStatusBar(QStatusBar(self))
