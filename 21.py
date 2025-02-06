@@ -21,7 +21,6 @@ class Color(QWidget):
         palette.setColor(QPalette.ColorRole.Window, QColor(color))
         self.setPalette(palette)
 
-
 class MainWindow (QMainWindow):
     def __init__(self):
         super().__init__()
